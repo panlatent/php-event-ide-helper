@@ -1,12 +1,7 @@
 {
   "name": "panlatent/php-event-ide-helper",
   "description": "PHP Event IDE Helper",
-  "keywords": [
-    "php",
-    "event",
-    "ide",
-    "helper"
-  ],
+  "keywords": ["php", "event", "ide", "helper", "phpstorm"],
   "type": "library",
   "license": "GPLv3",
   "authors": [
