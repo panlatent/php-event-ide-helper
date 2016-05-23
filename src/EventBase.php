@@ -248,7 +248,7 @@ class EventBase {
      * (PECL event >= 1.2.6-beta)
      *
      * @link http://php.net/manual/en/eventbase.priorityinit.php
-     * @see Event::setPriority() http://php.net/manual/en/event.setpriority.php
+     * @see  Event::setPriority() http://php.net/manual/en/event.setpriority.php
      *
      * @param int $n_priorities The number of priorities per event base.
      *
@@ -275,8 +275,8 @@ class EventBase {
      * (PECL event >= 1.2.6-beta)
      *
      * @link http://php.net/manual/en/eventbase.stop.php
-     * @see EventBase::exit() http://php.net/manual/en/eventbase.exit.php
-     * @see EventBase::gotStop() http://php.net/manual/en/eventbase.gotstop.php
+     * @see  EventBase::exit() http://php.net/manual/en/eventbase.exit.php
+     * @see  EventBase::gotStop() http://php.net/manual/en/eventbase.gotstop.php
      *
      * @return bool Returns TRUE on success. Otherwise FALSE.
      */
