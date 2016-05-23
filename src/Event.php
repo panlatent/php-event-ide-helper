@@ -74,7 +74,7 @@ final class Event {
      *
      * @return bool Returns TRUE on success. Otherwise FALSE
      */
-    public function add($timeout)
+    public function add($timeout = null)
     {
     }
 
@@ -94,7 +94,7 @@ final class Event {
      *
      * @return bool Returns TRUE on success. Otherwise FALSE
      */
-    public function addSignal($timeout)
+    public function addSignal($timeout = null)
     {
     }
 
@@ -113,7 +113,7 @@ final class Event {
      *
      * @return bool Returns TRUE on success. Otherwise FALSE
      */
-    public function addTimer($timeout)
+    public function addTimer($timeout = null)
     {
     }
 
@@ -258,7 +258,7 @@ final class Event {
      *
      * @return bool Returns TRUE on success. Otherwise FALSE.
      */
-    public function set(EventBase $base, $fd, $what, $cb, $arg)
+    public function set(EventBase $base, $fd, $what = null, $cb = null, $arg = null)
     {
     }
 
@@ -268,7 +268,7 @@ final class Event {
      *
      * @link http://php.net/manual/en/event.setpriority.php
      *
-     * @param int $priority
+     * @param int $priority The event priority.
      *
      * @return bool Returns TRUE on success. Otherwise FALSE.
      */
@@ -294,7 +294,7 @@ final class Event {
      *
      * @return bool Returns TRUE on success. Otherwise FALSE.
      */
-    public function setTimer(EventBase $base, $cb, $arg)
+    public function setTimer(EventBase $base, $cb, $arg = null)
     {
     }
 
@@ -319,7 +319,7 @@ final class Event {
      *
      * @return bool
      */
-    public function signal(EventBase $base, $signum, $cb, $arg)
+    public function signal(EventBase $base, $signum, $cb, $arg = null)
     {
     }
 
