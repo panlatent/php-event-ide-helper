@@ -80,16 +80,16 @@ final class Event {
      * <p>Constructs signal event object. This is a straightforward method to
      * create a signal event. Note, the generic Event::__construct() method can
      * contruct signal event objects too.</p>
-     * @link http://php.net/manual/en/event.signal.php
+ * @link http://php.net/manual/en/event.signal.php
      * @see  Constructing signal events
      *       http://php.net/manual/en/event.constructing.signal.events.php
-     * @param EventBase $base   The associated event base object.
+ * @param EventBase $base       The associated event base object.
      * @param int       $signum The signal number.
      * @param callable  $cb     The signal event callback. See Event callbacks
      *                          .
      * @param mixed     $arg    [optional] Custom data. If specified, it will
      *                          be passed to the callback when event triggers.
-     * @return bool
+ * @return Event|bool Returns Event object on success. Otherwise FALSE.
      */
     public static function signal(EventBase $base, $signum, $cb, $arg = null)
     {
@@ -98,15 +98,15 @@ final class Event {
     /**
      * Constructs timer event object
      * (PECL event >= 1.2.6-beta)
-     * <p>Constructs timer event object. This is a straightforward method to
+ * <p>Constructs timer event object. This is a straightforward method to
      * create a timer event. Note, the generic Event::__construct() method can
      * construct signal event objects too.</p>
-     * @link http://php.net/manual/en/event.timer.php
-     * @param EventBase $base The associated event base object.
-     * @param callable  $cb   The signal event callback. See Event callbacks .
-     * @param mixed     $arg  Custom data. If specified, it will be passed to
+ * @link http://php.net/manual/en/event.timer.php
+ * @param EventBase    $base  The associated event base object.
+     * @param callable $cb    The signal event callback. See Event callbacks .
+     * @param mixed    $arg   Custom data. If specified, it will be passed to
      *                        the callback when event triggers.
-     * @return bool Returns Event object on success. Otherwise FALSE.
+ * @return Event|bool Returns Event object on success. Otherwise FALSE.
      */
     public static function timer(EventBase $base, $cb, $arg)
     {
