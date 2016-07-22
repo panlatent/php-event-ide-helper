@@ -52,6 +52,67 @@ final class Event {
     public $pending;
 
     /**
+     * Constructs Event object
+     * (PECL event >= 1.2.6-beta)
+     *
+     * @link http://php.net/manual/en/event.construct.php
+     * @see  Event::signal() http://php.net/manual/en/event.signal.php
+     * @see  Event::timer() http://php.net/manual/en/event.timer.php
+     *
+     * @param EventBase $base The event base to associate with.
+     * @param mixed     $fd   stream resource, socket resource, or numeric file
+     *                        descriptor. For timer events pass -1 . For signal
+     *                        events pass the signal number, e.g. SIGHUP .
+     * @param int       $what Event flags. See Event flags .
+     * @param callable  $cb   The event callback. See Event callbacks .
+     * @param mixed     $arg  [optional] Custom data. If specified, it will be
+     *                        passed to the callback when event triggers.
+     *
+     * @return Event
+     */
+    public function __construct(EventBase $base, $fd, $what, $cb, $arg = null)
+    {
+    }
+
+    /**
+     * Constructs signal event object
+     * (PECL event >= 1.2.6-beta)
+     * <p>Constructs signal event object. This is a straightforward method to
+     * create a signal event. Note, the generic Event::__construct() method can
+     * contruct signal event objects too.</p>
+     * @link http://php.net/manual/en/event.signal.php
+     * @see  Constructing signal events
+     *       http://php.net/manual/en/event.constructing.signal.events.php
+     * @param EventBase $base   The associated event base object.
+     * @param int       $signum The signal number.
+     * @param callable  $cb     The signal event callback. See Event callbacks
+     *                          .
+     * @param mixed     $arg    [optional] Custom data. If specified, it will
+     *                          be passed to the callback when event triggers.
+     * @return bool
+     */
+    public static function signal(EventBase $base, $signum, $cb, $arg = null)
+    {
+    }
+
+    /**
+     * Constructs timer event object
+     * (PECL event >= 1.2.6-beta)
+     * <p>Constructs timer event object. This is a straightforward method to
+     * create a timer event. Note, the generic Event::__construct() method can
+     * construct signal event objects too.</p>
+     * @link http://php.net/manual/en/event.timer.php
+     * @param EventBase $base The associated event base object.
+     * @param callable  $cb   The signal event callback. See Event callbacks .
+     * @param mixed     $arg  Custom data. If specified, it will be passed to
+     *                        the callback when event triggers.
+     * @return bool Returns Event object on success. Otherwise FALSE.
+     */
+    public static function timer(EventBase $base, $cb, $arg)
+    {
+    }
+
+    /**
      * Makes event pending
      * (PECL event >= 1.2.6-beta)
      *
@@ -114,29 +175,6 @@ final class Event {
      * @return bool Returns TRUE on success. Otherwise FALSE
      */
     public function addTimer($timeout = null)
-    {
-    }
-
-    /**
-     * Constructs Event object
-     * (PECL event >= 1.2.6-beta)
-     *
-     * @link http://php.net/manual/en/event.construct.php
-     * @see  Event::signal() http://php.net/manual/en/event.signal.php
-     * @see  Event::timer() http://php.net/manual/en/event.timer.php
-     *
-     * @param EventBase $base The event base to associate with.
-     * @param mixed     $fd   stream resource, socket resource, or numeric file
-     *                        descriptor. For timer events pass -1 . For signal
-     *                        events pass the signal number, e.g. SIGHUP .
-     * @param int       $what Event flags. See Event flags .
-     * @param callable  $cb   The event callback. See Event callbacks .
-     * @param mixed     $arg  [optional] Custom data. If specified, it will be
-     *                        passed to the callback when event triggers.
-     *
-     * @return Event
-     */
-    public function __construct(EventBase $base, $fd, $what, $cb, $arg = null)
     {
     }
 
@@ -295,52 +333,6 @@ final class Event {
      * @return bool Returns TRUE on success. Otherwise FALSE.
      */
     public function setTimer(EventBase $base, $cb, $arg = null)
-    {
-    }
-
-    /**
-     * Constructs signal event object
-     * (PECL event >= 1.2.6-beta)
-     *
-     * <p>Constructs signal event object. This is a straightforward method to
-     * create a signal event. Note, the generic Event::__construct() method can
-     * contruct signal event objects too.</p>
-     *
-     * @link http://php.net/manual/en/event.signal.php
-     * @see  Constructing signal events
-     *       http://php.net/manual/en/event.constructing.signal.events.php
-     *
-     * @param EventBase $base   The associated event base object.
-     * @param int       $signum The signal number.
-     * @param callable  $cb     The signal event callback. See Event callbacks
-     *                          .
-     * @param mixed     $arg    [optional] Custom data. If specified, it will
-     *                          be passed to the callback when event triggers.
-     *
-     * @return bool
-     */
-    public function signal(EventBase $base, $signum, $cb, $arg = null)
-    {
-    }
-
-    /**
-     * Constructs timer event object
-     * (PECL event >= 1.2.6-beta)
-     *
-     * <p>Constructs timer event object. This is a straightforward method to
-     * create a timer event. Note, the generic Event::__construct() method can
-     * construct signal event objects too.</p>
-     *
-     * @link http://php.net/manual/en/event.timer.php
-     *
-     * @param EventBase $base The associated event base object.
-     * @param callable  $cb   The signal event callback. See Event callbacks .
-     * @param mixed     $arg  Custom data. If specified, it will be passed to
-     *                        the callback when event triggers.
-     *
-     * @return bool Returns Event object on success. Otherwise FALSE.
-     */
-    public function timer(EventBase $base, $cb, $arg)
     {
     }
 
